@@ -1,0 +1,87 @@
+/* * {
+  border: 1px solid black;
+} */
+
+html{
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  color: #05380F;
+}
+
+main {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.player-column {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  font-size: 15px;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  padding: 25px;
+}
+.water {
+  height: 22%;
+}
+
+.water-player{
+  background: linear-gradient(#C3D1E9, #6A8CC8, #426BB3);
+}
+
+.fire {
+  height: 24%;
+}
+
+.fire-player {
+  background: linear-gradient(#F6E8A2, #F2882C, #9B1C2F);
+}
+
+.center-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  background: #8D8D7C;
+  border-right: 2px solid #05380F;
+  border-left: 2px solid #05380F;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+}
+
+.game-board-box {
+  width: 30%;
+  height: 33%;
+}
+
+.column {
+  border-right: 5px solid #05380F;
+}
+
+.row {
+  border-bottom: 5px solid #05380F;
+}
