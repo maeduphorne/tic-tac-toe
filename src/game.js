@@ -36,7 +36,7 @@ class Game {
 
     checkWin() {
       for (var i = 0; i < this.possibleWins.length; i++) {
-        if ((this.possibleWins[i][0]) === (this.possibleWins[i][1]) === (this.possibleWins[i][2])) {
+        if (this.possibleWins[i][0] === this.possibleWins[i][1] === this.possibleWins[i][2]) {
           console.log(WIN!)
           // return true;
         }

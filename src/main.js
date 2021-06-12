@@ -1,6 +1,5 @@
-var ticTacToe = new Game();
-
 var board = document.getElementById('gameBoard');
+var currentGame = new Game();
 
 board.addEventListener('click', function(event){
   playTurn(event);
@@ -10,7 +9,8 @@ board.addEventListener('click', function(event){
 function playTurn(event) {
   if (event.target.id === 'zero') {
     assignPlayerSpace(0);
-    // ticTacToe.gameboard[0] = players.player.id;
+    console.log(0)
+    // currentGame.gameboard[0] = players.player.id;
   } else if (event.target.id === 'one') {
     assignPlayerSpace(1);
   } else if (event.target.id === 'two') {
