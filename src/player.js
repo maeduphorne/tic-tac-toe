@@ -16,7 +16,7 @@ class Player {
     //display on DOM
     this.wins = JSON.parse(localStorage.getItems(`${this.id}WinTotal`));
   }
-  
+
   addWin() {
     this.wins++
     // if this player wins a game,
