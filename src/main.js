@@ -34,17 +34,14 @@ function playTurn(event) {
 };
 
 function displayBoard() {
-  for (var i = 0; i < currentGame.gameBoard.length; i++){
-    if (currentGame.gameBoard[i] === 1){
-      console.log(currentGame.gameBoard[i])
+    if (currentGame.turn === currentGame.players.player1){
       event.target.innerText = '💧'
-    } else if (currentGame.gameBoard[i]=== 2){
+    } else if (currentGame.turn === currentGame.players.player2){
       event.target.innerText = '🔥'
     }
   }
 //   //if the player space is assigned 1, then change the inner text to 'water'
 //   //if the player space is assigned 2, then change the inner text to 'flame'
-}
 
 // upon click of the game-board, grab the closest game-board-box and update the innerText to the player's token whose turn it currently is
 //
