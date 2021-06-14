@@ -1,11 +1,20 @@
 var board = document.getElementById('gameBoard');
 var heading = document.getElementById('header');
+var playerOneWins = document.getElementById('waterPlayerWins')
+var playerTwoWins = document.getElementById('firePlayerWins')
 var currentGame = new Game();
 
 board.addEventListener('click', function(event){
   playTurn(event);
 });
-// window.addEventListener('load', loadPage);
+window.addEventListener('load', loadPage);
+
+function loadPage() {
+  currentGame.player1.retrieveWinsFromStorage();
+  currentGame.player2.retrieveWinsFromStorage();
+  playerOneWins.innerText = `${currentGame.player1.wins} Wins`
+  playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
+}
 
 function playTurn(event) {
   if (event.target.id === 'zero') {
@@ -41,7 +50,16 @@ function playTurn(event) {
 function gameWin(){
   disableBoard();
   displayWinner();
+  updateWinsDispaly();
 }
+
+// function updateWinsDisplay() {
+//   if (currentGame.won === true && currentGame.turn === currentGame.player2){
+//     .innerText =
+//   } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
+//     heading.innerText = 
+//   }
+// };
 
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
