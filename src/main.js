@@ -26,10 +26,10 @@ function playTurn(event) {
   } else if (event.target.id === 'eight') {
     currentGame.assignPlayerSpace(8);
   };
-  currentGame.toggleTurn();
-  displayBoard();
   currentGame.checkPlayerOneWin();
   currentGame.checkPlayerTwoWin();
+  currentGame.toggleTurn();
+  displayBoard();
   // this is how you get the index number to feed to a diff. function that reassigns the index it receives to the id of the player whose turn it currently is
   // next function would use a conditional to take the fed in index and determine what the new value would be based on the value of this.turn
 };

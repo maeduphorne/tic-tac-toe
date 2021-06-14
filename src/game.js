@@ -6,8 +6,6 @@ class Game {
     };
     this.turn = this.players.player1;
     this.gameBoard = [null, null, null, null, null, null, null, null, null];
-    // this.possibleWins = [[1, 1, 1, 2, 2, null, null, null, null],
-    // [2, 2, null, 1, 1, 1, null, null, null]]
   };
 
     toggleTurn() {
@@ -27,67 +25,60 @@ class Game {
       }
     };
 
-    // checkWin() {
-    //   var stringifiedBoard = JSON.stringify(this.gameBoard);
-    //   // console.log(`stringified Board`, stringifiedBoard);
-    //   for (var i = 0; i < this.possibleWins.length; i++) {
-    //     var stringifiedWin = JSON.stringify(this.possibleWins[i]);
-    //     // console.log(`stringified win`, stringifiedWin);
-    //     if (stringifiedBoard === stringifiedWin) {
-    //       alert('you won')
-    //     }
-    //       // if the value of the first index of each array within the possibleWins array is strictly equal to the second index within the possibleWins array, is strictly equal to the third index within the possibleWins array
-    //       // console.log(`gameBoard index 0`, this.gameBoard[0])
-    //       // console.log(`possible wins index 0/index0`, this.possibleWins[i][0])
-    //     }
-    // };
-
-    // if these indices are equal, then it's a win
     checkPlayerOneWin() {
-      // console.log(`index 0`, this.gameBoard[0]);
-      // console.log(`index 1`, this.gameBoard[1]);
-      // console.log(`index 2`, this.gameBoard[2]);
       if (this.gameBoard[0] === 1 && this.gameBoard[1] === 1 && this.gameBoard[2] === 1) {
         console.log('you win1!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[3] === 1 && this.gameBoard[4] === 1 && this.gameBoard[5] === 1) {
         console.log('you win2!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[6] === 1 && this.gameBoard[7] === 1 && this.gameBoard[8] === 1) {
         console.log('you win3!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[2] === 1 && this.gameBoard[4] === 1 && this.gameBoard[6] === 1) {
         console.log('you win4!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[0] === 1 && this.gameBoard[4] === 1 && this.gameBoard[8] === 1) {
         console.log('you win5!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[0] === 1 && this.gameBoard[3] === 1 && this.gameBoard[6] === 1) {
         console.log('you win6!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[1] === 1 && this.gameBoard[4] === 1 && this.gameBoard[7] === 1) {
         console.log('you win7!');
+        this.players.player1.addWintoStorage();
       } else if (this.gameBoard[2] === 1 && this.gameBoard[5] === 1 && this.gameBoard[8] === 1) {
         console.log('you win8!');
+        this.players.player1.addWintoStorage();
       } else {
         console.log('you lose')
       }
     }
 
     checkPlayerTwoWin() {
-      // console.log(`index 0`, this.gameBoard[0]);
-      // console.log(`index 1`, this.gameBoard[1]);
-      // console.log(`index 2`, this.gameBoard[2]);
       if (this.gameBoard[0] === 2 && this.gameBoard[1] === 2 && this.gameBoard[2] === 2) {
-        return 'you win1!'
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[3] === 2 && this.gameBoard[4] === 2 && this.gameBoard[5] === 2) {
         console.log('you win2!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[6] === 2 && this.gameBoard[7] === 2 && this.gameBoard[8] === 2) {
         console.log('you win3!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[2] === 2 && this.gameBoard[4] === 2 && this.gameBoard[6] === 2) {
         console.log('you win4!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[0] === 2 && this.gameBoard[4] === 2 && this.gameBoard[8] === 2) {
         console.log('you win5!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[0] === 2 && this.gameBoard[3] === 2 && this.gameBoard[6] === 2) {
         console.log('you win6!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[1] === 2 && this.gameBoard[4] === 2 && this.gameBoard[7] === 2) {
         console.log('you win7!');
+        this.players.player2.addWintoStorage();
       } else if (this.gameBoard[2] === 2 && this.gameBoard[5] === 2 && this.gameBoard[8] === 2) {
         console.log('you win8!');
+        this.players.player2.addWintoStorage();
       } else {
         console.log('you lose')
       }
