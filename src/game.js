@@ -28,63 +28,56 @@ class Game {
     checkPlayerOneWin() {
       if (this.gameBoard[0] === 1 && this.gameBoard[1] === 1 && this.gameBoard[2] === 1) {
         this.won = true;
-        console.log('you win1!');
-        this.player1.addWintoStorage();
+        this.player1.addWin();
       } else if (this.gameBoard[3] === 1 && this.gameBoard[4] === 1 && this.gameBoard[5] === 1) {
         this.won = true;
-        console.log('you win2!');
-        this.player1.addWintoStorage();
+        this.player1.addWin();
       } else if (this.gameBoard[6] === 1 && this.gameBoard[7] === 1 && this.gameBoard[8] === 1) {
         this.won = true;
-        console.log('you win3!');
-        this.player1.addWintoStorage();
+        this.player1.addWin();
       } else if (this.gameBoard[2] === 1 && this.gameBoard[4] === 1 && this.gameBoard[6] === 1) {
-        console.log('you win4!');
-        this.player1.addWintoStorage();
+        this.won = true;
+        this.player1.addWin();
       } else if (this.gameBoard[0] === 1 && this.gameBoard[4] === 1 && this.gameBoard[8] === 1) {
-        console.log('you win5!');
-        this.player1.addWintoStorage();
+        this.won = true;
+        this.player1.addWin();
       } else if (this.gameBoard[0] === 1 && this.gameBoard[3] === 1 && this.gameBoard[6] === 1) {
-        console.log('you win6!');
-        this.player1.addWintoStorage();
+        this.won = true;
+        this.player1.addWin();
       } else if (this.gameBoard[1] === 1 && this.gameBoard[4] === 1 && this.gameBoard[7] === 1) {
-        console.log('you win7!');
-        this.player1.addWintoStorage();
+        this.won = true;
+        this.player1.addWin();
       } else if (this.gameBoard[2] === 1 && this.gameBoard[5] === 1 && this.gameBoard[8] === 1) {
-        console.log('you win8!');
-        this.player1.addWintoStorage();
-      } else {
-        console.log('you lose')
+        this.won = true;
+        this.player1.addWin();
       }
     }
 
     checkPlayerTwoWin() {
       if (this.gameBoard[0] === 2 && this.gameBoard[1] === 2 && this.gameBoard[2] === 2) {
         this.won = true;
-        this.player2.addWintoStorage();
+        this.player2.addWin();
       } else if (this.gameBoard[3] === 2 && this.gameBoard[4] === 2 && this.gameBoard[5] === 2) {
-        console.log('you win2!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[6] === 2 && this.gameBoard[7] === 2 && this.gameBoard[8] === 2) {
-        console.log('you win3!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[2] === 2 && this.gameBoard[4] === 2 && this.gameBoard[6] === 2) {
-        console.log('you win4!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[0] === 2 && this.gameBoard[4] === 2 && this.gameBoard[8] === 2) {
-        console.log('you win5!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[0] === 2 && this.gameBoard[3] === 2 && this.gameBoard[6] === 2) {
-        console.log('you win6!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[1] === 2 && this.gameBoard[4] === 2 && this.gameBoard[7] === 2) {
-        console.log('you win7!');
-        this.player2.addWintoStorage();
+        this.won = true;
+        this.player2.addWin();
       } else if (this.gameBoard[2] === 2 && this.gameBoard[5] === 2 && this.gameBoard[8] === 2) {
-        console.log('you win8!');
-        this.player2.addWintoStorage();
-      } else {
-        console.log('you lose')
+        this.won = true;
+        this.player2.addWin();
       }
     }
 
