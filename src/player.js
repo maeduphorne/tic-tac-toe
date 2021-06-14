@@ -5,8 +5,7 @@ class Player {
     this.wins = 0;
   }
 
-  addWintoStorage() {
-    this.wins++
+  saveWinsToStorage() {
     // stringify wins each time the variable is updated and set to storage
     localStorage.setItem(`${this.id}WinTotal`, JSON.stringify(this.wins));
   }
@@ -15,6 +14,10 @@ class Player {
     //get wins from storage, parse to represents a JS object
     //update number in data model (reassign this.wins to whatever number number is in localStorage)
     //display on DOM
-    this.wins = JSON.parse(localStorage.getItems(`${this.id}WinTotal`));
+    this.wins += JSON.parse(localStorage.getItems(`${this.id}WinTotal`));
+  }
+
+  addWin() {
+    this.wins++
   }
 }

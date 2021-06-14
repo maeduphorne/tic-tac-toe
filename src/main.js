@@ -1,15 +1,11 @@
 var board = document.getElementById('gameBoard');
+var heading = document.getElementById('header');
 var currentGame = new Game();
 
 board.addEventListener('click', function(event){
   playTurn(event);
 });
-// window.addEventListener('load', refreshPage);
-
-// if this.win = true (in game class), then disable the board from clicks
-// function refreshPage() {
-//   enableBoard();
-// };
+// window.addEventListener('load', loadPage);
 
 function playTurn(event) {
   if (event.target.id === 'zero') {
@@ -33,11 +29,19 @@ function playTurn(event) {
   };
   displayPlayerIcon();
   currentGame.toggleTurn();
+  updateTurnDisplay();
   currentGame.checkPlayerOneWin();
+  currentGame.player1.saveWinsToStorage();
   currentGame.checkPlayerTwoWin();
+  currentGame.player2.saveWinsToStorage();
   gameWin();
   console.log(currentGame)
 };
+
+function gameWin(){
+  disableBoard();
+  displayWinner();
+}
 
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
@@ -47,16 +51,25 @@ function displayPlayerIcon() {
     };
   };
 
-function gameWin(){
+function updateTurnDisplay() {
+  if (currentGame.turn === currentGame.player1 && currentGame.won === false){
+    heading.innerText = `It's 💧's turn`;
+  } else if (currentGame.turn === currentGame.player2 && currentGame.won === false){
+    heading.innerText = `It's 🔥's turn`;
+  }
+}
+
+
+function disableBoard() {
   if (currentGame.won === true) {
     board.classList.add('eliminate-click');
   };
-}
+};
 
-// function disableBoard() {
-//       //take off the event listener from the board
-//   };
-//
-// function enableBoard() {
-//   board.classList.remove('eliminate-click');
-// }
+function displayWinner() {
+  if (currentGame.won === true && currentGame.turn === currentGame.player2){
+    heading.innerText = '💧 won!';
+  } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
+    heading.innerText = '🔥 won!';
+  }
+}
