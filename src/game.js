@@ -5,7 +5,7 @@ class Game {
 
     this.turn = this.player1;
     this.gameBoard = [null, null, null, null, null, null, null, null, null];
-    this.win = false;
+    this.won = false;
   };
 
     toggleTurn() {
@@ -27,12 +27,15 @@ class Game {
 
     checkPlayerOneWin() {
       if (this.gameBoard[0] === 1 && this.gameBoard[1] === 1 && this.gameBoard[2] === 1) {
-        this.win = true;
+        this.won = true;
+        console.log('you win1!');
         this.player1.addWintoStorage();
       } else if (this.gameBoard[3] === 1 && this.gameBoard[4] === 1 && this.gameBoard[5] === 1) {
+        this.won = true;
         console.log('you win2!');
         this.player1.addWintoStorage();
       } else if (this.gameBoard[6] === 1 && this.gameBoard[7] === 1 && this.gameBoard[8] === 1) {
+        this.won = true;
         console.log('you win3!');
         this.player1.addWintoStorage();
       } else if (this.gameBoard[2] === 1 && this.gameBoard[4] === 1 && this.gameBoard[6] === 1) {
@@ -57,6 +60,7 @@ class Game {
 
     checkPlayerTwoWin() {
       if (this.gameBoard[0] === 2 && this.gameBoard[1] === 2 && this.gameBoard[2] === 2) {
+        this.won = true;
         this.player2.addWintoStorage();
       } else if (this.gameBoard[3] === 2 && this.gameBoard[4] === 2 && this.gameBoard[5] === 2) {
         console.log('you win2!');
