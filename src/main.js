@@ -51,7 +51,7 @@ function winGame(){
   disableBoard();
   displayWinner();
   updateWinsDisplay();
-  // refreshPage();
+  clearGameBoard();
 };
 
 function updateWinsDisplay() {
@@ -92,9 +92,19 @@ function displayWinner() {
   }
 }
 
-function refreshPage() {
-  window.setTimeout(currentGame.resetBoard()
-   5000);
+function clearGameBoard() {
+  setTimeout(function() {resetGame()},
+   5000)
 }
 
-// loop through buttons to update them to empty innerHTML
+function resetGame() {
+  currentGame.won = false;
+  currentGame.turn = currentGame.player1;
+  currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
+  var gameBoardBox = document.querySelectorAll('.game-board-box')
+  for ( var i = 0; i < gameBoardBox.length; i++){
+    gameBoardBox[i].innerText = '';
+    gameBoard.classList.remove('eliminate-click');
+  }
+  heading.innerText = `It's 💧's turn`;
+};

@@ -81,12 +81,10 @@ class Game {
       }
     }
 
-    resetBoard() {
-      if (this.won === true) {
-        //  set timer
-      this.gameBoard = [null, null, null, null, null, null, null, null, null]
-      this.won = false;
-      }
-    }
+    // resetBoard() {
+    //   currentGame.won = false;
+    //   currentGame.turn = currentGame.player1;
+    //   currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
+    // }
 
 };
