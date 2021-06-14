@@ -5,6 +5,7 @@ var currentGame = new Game();
 board.addEventListener('click', function(event){
   playTurn(event);
 });
+// window.addEventListener('load', loadPage);
 
 function playTurn(event) {
   if (event.target.id === 'zero') {
@@ -37,6 +38,11 @@ function playTurn(event) {
   console.log(currentGame)
 };
 
+function gameWin(){
+  disableBoard();
+  displayWinner();
+}
+
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧'
@@ -53,10 +59,6 @@ function updateTurnDisplay() {
   }
 }
 
-function gameWin(){
-  disableBoard();
-  displayWinner();
-}
 
 function disableBoard() {
   if (currentGame.won === true) {

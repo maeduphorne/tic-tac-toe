@@ -83,6 +83,7 @@ class Game {
 
     resetBoard() {
       this.gameBoard = [null, null, null, null, null, null, null, null, null]
+      this.won = false;
     }
 
 };
