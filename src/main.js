@@ -65,8 +65,10 @@ function updateWinsDisplay() {
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧'
+      // event.target.classList.add('eliminate-click');
     } else if (currentGame.turn === currentGame.player2){
       event.target.innerText = '🔥'
+      // event.target.classList.add('eliminate-click');
     };
   };
 
@@ -94,17 +96,20 @@ function displayWinner() {
 
 function clearGameBoard() {
   setTimeout(function() {resetGame()},
-   5000)
+  5000)
 }
 
 function resetGame() {
-  currentGame.won = false;
-  currentGame.turn = currentGame.player1;
-  currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
-  var gameBoardBox = document.querySelectorAll('.game-board-box')
-  for ( var i = 0; i < gameBoardBox.length; i++){
-    gameBoardBox[i].innerText = '';
-    gameBoard.classList.remove('eliminate-click');
+  if (currentGame.won === true) {
+    currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
+    currentGame.turn = currentGame.player1;
+    currentGame.won = false;
+    var gameBoardBox = document.querySelectorAll('.game-board-box')
+    for ( var i = 0; i < gameBoardBox.length; i++){
+      gameBoardBox[i].innerText = '';
+      gameBoardBox[i].classList.remove('eliminate-click');
+      gameBoard.classList.remove('eliminate-click');
+    }
+    heading.innerText = `It's 💧's turn`;
   }
-  heading.innerText = `It's 💧's turn`;
 };
