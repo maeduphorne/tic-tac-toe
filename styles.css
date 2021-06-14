@@ -85,3 +85,7 @@ img {
 .row {
   border-bottom: 5px solid #05380F;
 }
+
+.eliminate-click {
+  pointer-events: none;
+}

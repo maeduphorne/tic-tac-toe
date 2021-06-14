@@ -4,8 +4,12 @@ var currentGame = new Game();
 board.addEventListener('click', function(event){
   playTurn(event);
 });
+// window.addEventListener('load', refreshPage);
 
 // if this.win = true (in game class), then disable the board from clicks
+// function refreshPage() {
+//   enableBoard();
+// };
 
 function playTurn(event) {
   if (event.target.id === 'zero') {
@@ -31,6 +35,8 @@ function playTurn(event) {
   currentGame.toggleTurn();
   currentGame.checkPlayerOneWin();
   currentGame.checkPlayerTwoWin();
+  gameWin();
+  console.log(currentGame)
 };
 
 function displayPlayerIcon() {
@@ -38,5 +44,19 @@ function displayPlayerIcon() {
       event.target.innerText = '💧'
     } else if (currentGame.turn === currentGame.player2){
       event.target.innerText = '🔥'
-    }
-  }
+    };
+  };
+
+function gameWin(){
+  if (currentGame.won === true) {
+    board.classList.add('eliminate-click');
+  };
+}
+
+// function disableBoard() {
+//       //take off the event listener from the board
+//   };
+//
+// function enableBoard() {
+//   board.classList.remove('eliminate-click');
+// }
