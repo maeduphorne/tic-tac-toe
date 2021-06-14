@@ -5,6 +5,7 @@ board.addEventListener('click', function(event){
   playTurn(event);
 });
 
+// if this.win = true (in game class), then disable the board from clicks
 
 function playTurn(event) {
   if (event.target.id === 'zero') {
@@ -26,23 +27,16 @@ function playTurn(event) {
   } else if (event.target.id === 'eight') {
     currentGame.assignPlayerSpace(8);
   };
+  displayPlayerIcon();
+  currentGame.toggleTurn();
   currentGame.checkPlayerOneWin();
   currentGame.checkPlayerTwoWin();
-  currentGame.toggleTurn();
-  displayBoard();
-  // this is how you get the index number to feed to a diff. function that reassigns the index it receives to the id of the player whose turn it currently is
-  // next function would use a conditional to take the fed in index and determine what the new value would be based on the value of this.turn
 };
 
-function displayBoard() {
-    if (currentGame.turn === currentGame.players.player1){
+function displayPlayerIcon() {
+    if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧'
-    } else if (currentGame.turn === currentGame.players.player2){
+    } else if (currentGame.turn === currentGame.player2){
       event.target.innerText = '🔥'
     }
   }
-//   //if the player space is assigned 1, then change the inner text to 'water'
-//   //if the player space is assigned 2, then change the inner text to 'flame'
-
-// upon click of the game-board, grab the closest game-board-box and update the innerText to the player's token whose turn it currently is
-//
