@@ -12,8 +12,8 @@ window.addEventListener('load', loadPage);
 function loadPage() {
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
-    playerOneWins.innerText = `${currentGame.player1.wins} Wins`
-    playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
+  playerOneWins.innerText = `${currentGame.player1.wins} Wins`
+  playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
   };
 
 function playTurn(event) {
@@ -51,6 +51,7 @@ function winGame(){
   disableBoard();
   displayWinner();
   updateWinsDisplay();
+  // refreshPage();
 };
 
 function updateWinsDisplay() {
@@ -90,3 +91,10 @@ function displayWinner() {
     heading.innerText = '🔥 won!';
   }
 }
+
+function refreshPage() {
+  window.setTimeout(currentGame.resetBoard()
+   5000);
+}
+
+// loop through buttons to update them to empty innerHTML
