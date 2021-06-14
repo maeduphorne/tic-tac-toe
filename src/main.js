@@ -28,6 +28,7 @@ function playTurn(event) {
   };
   displayPlayerIcon();
   currentGame.toggleTurn();
+  updateTurnDisplay();
   currentGame.checkPlayerOneWin();
   currentGame.player1.saveWinsToStorage();
   currentGame.checkPlayerTwoWin();
@@ -44,6 +45,14 @@ function displayPlayerIcon() {
     };
   };
 
+function updateTurnDisplay() {
+  if (currentGame.turn === currentGame.player1 && currentGame.won === false){
+    heading.innerText = `It's 💧's turn`;
+  } else if (currentGame.turn === currentGame.player2 && currentGame.won === false){
+    heading.innerText = `It's 🔥's turn`;
+  }
+}
+
 function gameWin(){
   disableBoard();
   displayWinner();
@@ -56,11 +65,9 @@ function disableBoard() {
 };
 
 function displayWinner() {
-  // if game is won and the player is player 1, then replace the inner text of H1
   if (currentGame.won === true && currentGame.turn === currentGame.player2){
     heading.innerText = '💧 won!';
   } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
     heading.innerText = '🔥 won!';
   }
-  // if game is won and the player is player 2, then replace the inner text of H1
 }
