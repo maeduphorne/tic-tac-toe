@@ -82,8 +82,11 @@ class Game {
     }
 
     resetBoard() {
+      if (this.won === true) {
+        //  set timer
       this.gameBoard = [null, null, null, null, null, null, null, null, null]
       this.won = false;
+      }
     }
 
 };
