@@ -14,7 +14,7 @@ class Player {
     //get wins from storage, parse to represents a JS object
     //update number in data model (reassign this.wins to whatever number number is in localStorage)
     //display on DOM
-    this.wins = JSON.parse(localStorage.getItem(`${this.id}WinTotal`));
+    this.wins = JSON.parse(localStorage.getItem(`${this.id}WinTotal`)) || 0;
   }
 
   addWin() {
