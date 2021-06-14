@@ -51,7 +51,7 @@ function winGame(){
   disableBoard();
   displayWinner();
   updateWinsDisplay();
-  // refreshPage();
+  clearGameBoard();
 };
 
 function updateWinsDisplay() {
@@ -65,8 +65,10 @@ function updateWinsDisplay() {
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧'
+      // event.target.classList.add('eliminate-click');
     } else if (currentGame.turn === currentGame.player2){
       event.target.innerText = '🔥'
+      // event.target.classList.add('eliminate-click');
     };
   };
 
@@ -92,9 +94,22 @@ function displayWinner() {
   }
 }
 
-function refreshPage() {
-  window.setTimeout(currentGame.resetBoard()
-   5000);
+function clearGameBoard() {
+  setTimeout(function() {resetGame()},
+  5000)
 }
 
-// loop through buttons to update them to empty innerHTML
+function resetGame() {
+  if (currentGame.won === true) {
+    currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
+    currentGame.turn = currentGame.player1;
+    currentGame.won = false;
+    var gameBoardBox = document.querySelectorAll('.game-board-box')
+    for ( var i = 0; i < gameBoardBox.length; i++){
+      gameBoardBox[i].innerText = '';
+      gameBoardBox[i].classList.remove('eliminate-click');
+      gameBoard.classList.remove('eliminate-click');
+    }
+    heading.innerText = `It's 💧's turn`;
+  }
+};

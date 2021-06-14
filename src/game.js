@@ -2,9 +2,8 @@ class Game {
   constructor() {
     this.player1 = new Player(1, '💧');
     this.player2 = new Player(2, '🔥');
-
-    this.turn = this.player1;
     this.gameBoard = [null, null, null, null, null, null, null, null, null];
+    this.turn = this.player1;
     this.won = false;
   };
 
@@ -80,13 +79,4 @@ class Game {
         this.player2.addWin();
       }
     }
-
-    resetBoard() {
-      if (this.won === true) {
-        //  set timer
-      this.gameBoard = [null, null, null, null, null, null, null, null, null]
-      this.won = false;
-      }
-    }
-
 };
