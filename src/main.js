@@ -12,22 +12,20 @@ function loadPage() {
   playerOneWins.innerText = `${currentGame.player1.wins} Wins`
   playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
   for (var i = 0; i < boardBoxes.length; i++) {
-    console.log(boardBoxes)
     boardBoxes[i].addEventListener('click', function(event){
       playTurn(event);
     });
   }
-  };
+};
 
 function playTurn(event) {
-  console.log(boardBoxes);
   for (var i = 0; i < boardBoxes.length; i++) {
     if (event.target.id === boardBoxes[i].id){
       currentGame.assignPlayerSpace(boardBoxes[i].id);
     }
   }
-  currentGame.tallyPlays();
   displayPlayerIcon();
+  currentGame.tallyPlays();
   currentGame.toggleTurn();
   updateTurnDisplay();
   currentGame.checkPlayerOneWin();
@@ -90,20 +88,15 @@ function displayWinner() {
 
 function clearGameBoard() {
   setTimeout(function() {resetGame()},
-  6000)
+  4000)
 }
 
 function resetGame() {
   if (currentGame.won === true || currentGame.totalPlays === 9) {
-    currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
-    currentGame.turn = currentGame.player1;
-    currentGame.won = false;
-    currentGame.totalPlays = 0;
-    var gameBoardBox = document.querySelectorAll('.game-board-box')
-    for ( var i = 0; i < gameBoardBox.length; i++){
-      gameBoardBox[i].innerText = '';
-      gameBoardBox[i].classList.remove('disable-click');
-      gameBoard.classList.remove('disable-click');
+    currentGame.resetGameClass();
+    for ( var i = 0; i < boardBoxes.length; i++){
+      boardBoxes[i].innerText = '';
+      boardBoxes[i].classList.remove('disable-click');
     }
     heading.innerText = `It's 💧's turn`;
   }

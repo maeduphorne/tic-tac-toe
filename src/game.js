@@ -84,10 +84,10 @@ class Game {
       }
     }
 
-  // if this.totalPlays is equal to 9 && this.won is still false, then the game is a draw
-  //tallyPlays () {
-  // this.totalPlays++}
-  // in main - if there is a play, call currentGame.tallyPlays
-  // make sure to rest tallyPlays
-
+resetGameClass() {
+    currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
+    currentGame.turn = currentGame.player1;
+    currentGame.won = false;
+    currentGame.totalPlays = 0;
+  }
 }
