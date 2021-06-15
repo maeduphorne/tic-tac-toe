@@ -1,21 +1,22 @@
 # Tic-Tac-Toe
 
 ## Table of Contents
-  - [Introduction](##Introduction)
-  - [Collaborators](##Collaborators)
-  - [Technologies](##Technologies)
-  - [Features](##Features)
-  - [Illustrations](##Illustrations)
-  - [Possible Future Extensions](##Possible-Future-Extensions)
-  - [Set Up](##Set-Up)
-  - [Sources](##Sources)
-  - [Project Specs](##Project-Specs)
+  - [Introduction](#Introduction)
+  - [Collaborators](#Collaborators)
+  - [Technologies](#Technologies)
+  - [Features](#Features)
+  - [Illustrations](#Illustrations)
+  - [Possible Future Extensions](#Possible-Future-Extensions)
+  - [Set Up](#Set-Up)
+  - [Sources](#Sources)
+  - [Project Specs](#Project-Specs)
 
 ## Introduction
 
 Tic Tac Toe is a fun, simple game that people of all ages can enjoy! For this fire vs. water version, a 'water droplet' player and 'flame' player face off to see who can collect the most wins. Players can jump right into gameplay on page load. The board will reset after a game is won or declared a draw.
 
-##Collaborators
+## Collaborators
+
 - [Mae Duphorne](https://github.com/maeduphorne)
 
 ## Technologies
@@ -31,7 +32,7 @@ Tic Tac Toe is a fun, simple game that people of all ages can enjoy! For this fi
 
 ## Illustrations
 
-![recording (1)](https://user-images.githubusercontent.com/63213406/122135609-11dcc380-cdfe-11eb-938a-1fa3e85e73a1.gif)
+![recording (2)](https://user-images.githubusercontent.com/63213406/122136320-751b2580-cdff-11eb-8e5f-4903f080874a.gif)
 
 
 ## Possible Future Extensions
