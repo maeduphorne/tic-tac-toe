@@ -1,11 +1,16 @@
+// GLOBAL VARIABLE
 var currentGame = new Game();
+
+// SELECTORS
 var heading = document.getElementById('header');
 var playerOneWins = document.getElementById('waterPlayerWins');
 var playerTwoWins = document.getElementById('firePlayerWins');
 var boardBoxes = document.querySelectorAll('.game-board-box');
 
+// EVENT LISTENERS
 window.addEventListener('load', loadPage);
 
+//FUNCTIONS
 function loadPage() {
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
@@ -35,21 +40,6 @@ function playTurn(event) {
   winGame();
 };
 
-function winGame(){
-  disableBoard();
-  displayWinner();
-  updateWinsDisplay();
-  clearGameBoard();
-};
-
-function updateWinsDisplay() {
-  if (currentGame.won === true && currentGame.turn === currentGame.player2){
-    playerOneWins.innerText = `${currentGame.player1.wins} Wins`
-  } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
-    playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
-  };
-};
-
 function displayPlayerIcon() {
     if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧';
@@ -58,7 +48,7 @@ function displayPlayerIcon() {
       event.target.innerText = '🔥';
       event.target.classList.add('disable-click');
     };
-  };
+};
 
 function updateTurnDisplay() {
   if (currentGame.turn === currentGame.player1 && currentGame.won === false){
@@ -66,6 +56,13 @@ function updateTurnDisplay() {
   } else if (currentGame.turn === currentGame.player2 && currentGame.won === false){
     heading.innerText = `It's 🔥's turn`;
   };
+};
+
+function winGame(){
+  disableBoard();
+  displayWinner();
+  updateWinsDisplay();
+  clearGameBoard();
 };
 
 function disableBoard() {
@@ -83,6 +80,14 @@ function displayWinner() {
     heading.innerText = '🔥 won!';
   } else if (currentGame.won === false && currentGame.totalPlays === 9){
     heading.innerText = `It's a draw!`;
+  };
+};
+
+function updateWinsDisplay() {
+  if (currentGame.won === true && currentGame.turn === currentGame.player2){
+    playerOneWins.innerText = `${currentGame.player1.wins} Wins`
+  } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
+    playerTwoWins.innerText = `${currentGame.player2.wins} Wins`
   };
 };
 
