@@ -1,8 +1,8 @@
+var currentGame = new Game();
 var heading = document.getElementById('header');
 var playerOneWins = document.getElementById('waterPlayerWins');
 var playerTwoWins = document.getElementById('firePlayerWins');
 var boardBoxes = document.querySelectorAll('.game-board-box');
-var currentGame = new Game();
 
 window.addEventListener('load', loadPage);
 
