@@ -36,6 +36,7 @@ function playTurn(event) {
   } else if (event.target.id === 'eight') {
     currentGame.assignPlayerSpace(8);
   };
+  currentGame.tallyPlays();
   displayPlayerIcon();
   currentGame.toggleTurn();
   updateTurnDisplay();
@@ -100,10 +101,11 @@ function clearGameBoard() {
 }
 
 function resetGame() {
-  if (currentGame.won === true) {
+  if (currentGame.won === true || currentGame.totalPlays === 9) {
     currentGame.gameBoard = [null, null, null, null, null, null, null, null, null];
     currentGame.turn = currentGame.player1;
     currentGame.won = false;
+    currentGame.totalPlays = 0;
     var gameBoardBox = document.querySelectorAll('.game-board-box')
     for ( var i = 0; i < gameBoardBox.length; i++){
       gameBoardBox[i].innerText = '';

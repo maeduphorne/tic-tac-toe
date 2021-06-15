@@ -5,6 +5,7 @@ class Game {
     this.gameBoard = [null, null, null, null, null, null, null, null, null];
     this.turn = this.player1;
     this.won = false;
+    this.totalPlays = 0;
   };
 
     toggleTurn() {
@@ -15,6 +16,9 @@ class Game {
       };
     };
 
+    tallyPlays() {
+      this.totalPlays++;
+    };
 //trackdata
     assignPlayerSpace(index) {
       if (this.turn === this.player1 && this.gameBoard[index] === null) {
@@ -79,4 +83,11 @@ class Game {
         this.player2.addWin();
       }
     }
-};
+
+  // if this.totalPlays is equal to 9 && this.won is still false, then the game is a draw
+  //tallyPlays () {
+  // this.totalPlays++}
+  // in main - if there is a play, call currentGame.tallyPlays
+  // make sure to rest tallyPlays
+
+}
