@@ -92,12 +92,14 @@ function displayWinner() {
     heading.innerText = '💧 won!';
   } else if (currentGame.won === true && currentGame.turn === currentGame.player1){
     heading.innerText = '🔥 won!';
+  } else if (currentGame.won === false && currentGame.totalPlays === 9){
+    heading.innerText = `It's a draw!`
   }
 }
 
 function clearGameBoard() {
   setTimeout(function() {resetGame()},
-  5000)
+  6000)
 }
 
 function resetGame() {
