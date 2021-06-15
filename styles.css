@@ -86,6 +86,6 @@ img {
   border-bottom: 5px solid #05380F;
 }
 
-.eliminate-click {
+.disable-click {
   pointer-events: none;
 }

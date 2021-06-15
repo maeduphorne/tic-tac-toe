@@ -2,6 +2,7 @@ var board = document.getElementById('gameBoard');
 var heading = document.getElementById('header');
 var playerOneWins = document.getElementById('waterPlayerWins')
 var playerTwoWins = document.getElementById('firePlayerWins')
+var boardBoxes = document.querySelectorAll('game-board-box')
 var currentGame = new Game();
 
 board.addEventListener('click', function(event){
@@ -36,6 +37,7 @@ function playTurn(event) {
   } else if (event.target.id === 'eight') {
     currentGame.assignPlayerSpace(8);
   };
+  //disableclickevent for icon?
   currentGame.tallyPlays();
   displayPlayerIcon();
   currentGame.toggleTurn();
@@ -64,13 +66,17 @@ function updateWinsDisplay() {
 };
 
 function displayPlayerIcon() {
-  // console.log(event.target.id)
-    if (currentGame.turn === currentGame.player1){
+  // it's adding disable click to the entire gameboard
+    if (currentGame.turn === currentGame.player1 && event.target.id ===
+      'zero'||'one'||'two'||'three'||'four'||'five'||'six'||'seven'||'eight'){
+        console.log('player1')
       event.target.innerText = '💧'
-      event.target.classList.add('eliminate-click');
-    } else if (currentGame.turn === currentGame.player2){
+      event.target.classList.add('disable-click');
+    } else if (currentGame.turn === currentGame.player2 && event.target.id ===
+      'zero'||'one'||'two'||'three'||'four'||'five'||'six'||'seven'||'eight'){
+        console.log('player2')
       event.target.innerText = '🔥'
-      event.target.classList.add('eliminate-click');
+      event.target.classList.add('disable-click');
     };
   };
 
@@ -84,7 +90,7 @@ function updateTurnDisplay() {
 
 function disableBoard() {
   if (currentGame.won === true) {
-    board.classList.add('eliminate-click');
+    board.classList.add('disable-click');
   };
 };
 
@@ -112,8 +118,8 @@ function resetGame() {
     var gameBoardBox = document.querySelectorAll('.game-board-box')
     for ( var i = 0; i < gameBoardBox.length; i++){
       gameBoardBox[i].innerText = '';
-      gameBoardBox[i].classList.remove('eliminate-click');
-      gameBoard.classList.remove('eliminate-click');
+      gameBoardBox[i].classList.remove('disable-click');
+      gameBoard.classList.remove('disable-click');
     }
     heading.innerText = `It's 💧's turn`;
   }
