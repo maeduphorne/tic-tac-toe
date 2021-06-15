@@ -11,7 +11,6 @@ body {
   height: 100vh;
   margin: 0;
   font-family: sans-serif;
-  color: #05380F;
 }
 
 main {
@@ -21,11 +20,26 @@ main {
   width: 100vw;
 }
 
+h1 {
+  font-size: 35px;
+  padding-bottom: 7%;
+  color: #05380F;
+}
+
+h2 {
+  font-size: 25px;
+  color: #FFFFF0;
+  text-shadow: 2px 2px #000000;
+}
+
+img {
+  padding: 25px;
+}
+
 .player-column {
   display: flex;
   justify-content: center;
   width: 25%;
-  font-size: 15px;
 }
 
 .player-info {
@@ -34,9 +48,6 @@ main {
   align-items: center;
 }
 
-img {
-  padding: 25px;
-}
 .water {
   height: 22%;
 }
@@ -74,9 +85,20 @@ img {
 }
 
 .game-board-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30%;
   height: 33%;
+  text-align: center;
+  font-size: 70px;
+  background: #FFFEEE
 }
+/*
+.game-board-box:hover {
+  background: linear-gradient(to right, #C3D1E9, #6A8CC8, #F2882C, #9B1C2F);
+  border-radius: 10px;
+} */
 
 .column {
   border-right: 5px solid #05380F;
