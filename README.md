@@ -2,7 +2,7 @@
 
 ## Table of Contents
   - [Introduction](#Introduction)
-  - [Collaborators](#Collaborators)
+  - [Contributors](#Collaborators)
   - [Technologies](#Technologies)
   - [Features](#Features)
   - [Illustrations](#Illustrations)
@@ -15,7 +15,7 @@
 
 Tic Tac Toe is a fun, simple game that people of all ages can enjoy! For this fire vs. water version, a 'water droplet' player and 'flame' player face off to see who can collect the most wins. Players can jump right into gameplay on page load. The board will reset after a game is won or declared a draw.
 
-## Collaborators
+## Contributors
 
 - [Mae Duphorne](https://github.com/maeduphorne)
 
