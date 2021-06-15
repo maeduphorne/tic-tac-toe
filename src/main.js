@@ -45,7 +45,7 @@ function playTurn(event) {
   currentGame.checkPlayerTwoWin();
   currentGame.player2.saveWinsToStorage();
   winGame();
-  console.log(currentGame)
+  // console.log(currentGame)
 };
 
 function winGame(){
@@ -64,12 +64,13 @@ function updateWinsDisplay() {
 };
 
 function displayPlayerIcon() {
+  // console.log(event.target.id)
     if (currentGame.turn === currentGame.player1){
       event.target.innerText = '💧'
-      // event.target.classList.add('eliminate-click');
+      event.target.classList.add('eliminate-click');
     } else if (currentGame.turn === currentGame.player2){
       event.target.innerText = '🔥'
-      // event.target.classList.add('eliminate-click');
+      event.target.classList.add('eliminate-click');
     };
   };
 
