@@ -1,34 +1,76 @@
-/* * {
-  border: 1px solid black;
-} */
-
+/* FULL PAGE */
 html{
   height: 100vh;
   margin: 0;
 }
 
 body {
+  font-family: sans-serif;
   height: 100vh;
   margin: 0;
-  font-family: sans-serif;
 }
 
 main {
   display: flex;
-  margin: 0;
   height: 100vh;
+  margin: 0;
   width: 100vw;
 }
 
+/* CENTER SECTION */
 h1 {
+  color: #05380F;
   font-size: 35px;
   padding-bottom: 7%;
-  color: #05380F;
 }
 
+.center-section {
+  align-items: center;
+  background: #FFFFF0;
+  border-left: 2px solid #05380F;
+  border-right: 2px solid #05380F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 60%;
+  justify-content: center;
+  width: 60%;
+}
+
+.game-board-box {
+  align-items: center;
+  background: #FFFEEE;
+  display: flex;
+  font-size: 70px;
+  height: 33%;
+  justify-content: center;
+  width: 30%;
+  text-align: center;
+}
+
+.column {
+  border-right: 5px solid #05380F;
+}
+
+.row {
+  border-bottom: 5px solid #05380F;
+}
+
+.disable-click {
+  pointer-events: none;
+}
+
+/* SIDE COLUMNS */
 h2 {
-  font-size: 25px;
   color: #FFFFF0;
+  font-size: 25px;
   text-shadow: 2px 2px #000000;
 }
 
@@ -43,9 +85,9 @@ img {
 }
 
 .player-info {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .water {
@@ -62,52 +104,4 @@ img {
 
 .fire-player {
   background: linear-gradient(#F6E8A2, #F2882C, #9B1C2F);
-}
-
-.center-section {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  background: #FFFFF0;
-  border-right: 2px solid #05380F;
-  border-left: 2px solid #05380F;
-}
-
-.game-board {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  width: 60%;
-  height: 60%;
-}
-
-.game-board-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 33%;
-  text-align: center;
-  font-size: 70px;
-  background: #FFFEEE
-}
-/*
-.game-board-box:hover {
-  background: linear-gradient(to right, #C3D1E9, #6A8CC8, #F2882C, #9B1C2F);
-  border-radius: 10px;
-} */
-
-.column {
-  border-right: 5px solid #05380F;
-}
-
-.row {
-  border-bottom: 5px solid #05380F;
-}
-
-.disable-click {
-  pointer-events: none;
 }
